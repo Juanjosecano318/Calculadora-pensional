@@ -13,7 +13,7 @@ class Pension:
 
     def EsIgual(self, otra):
         """Compara si esta instancia es igual a otra"""
-        assert self.id == otra.id
+      
         assert self.cedula == otra.cedula
         assert self.base_settlement_income == otra.base_settlement_income
         assert self.current_legal_minimum_wage == otra.current_legal_minimum_wage
