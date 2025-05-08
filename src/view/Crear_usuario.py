@@ -2,7 +2,7 @@ import sys
 sys.path.append("src")
 
 from model.Usuario import Usuario
-from controller.Usuarios_Controller import ControladorUsuarios
+from controller.Pension_Controller import ControladorUsuarios
 
 
 # Crear una instancia del Modelo

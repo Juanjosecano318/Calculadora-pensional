@@ -2,7 +2,7 @@ import sys
 sys.path.append("src")
 
 from model.Pension import Pension
-from controller.Pension_Controller import ControladorPension
+from controller.Usuarios_Controller import ControladorPension
 
 
 
