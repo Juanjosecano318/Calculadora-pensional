@@ -2,7 +2,7 @@ import sys
 sys.path.append( "src" )
 
 import psycopg2
-from model.pension import *
+from model.Pension import *
 
 sys.path.append("")
 import SecretConfig
@@ -12,15 +12,20 @@ class ControladorPension :
     def CrearTabla(self):
         """ Crea la tabla de usuario en la BD """
         cursor = ControladorPension().ObtenerCursor()
-        with open ("sql/crear-pension.sql", "r") as file:
-            cursor.execute(file.read())
+
+        cursor.execute("""create table Pension (
+            cedula integer primary key,
+            base_settlement_income real not null,
+            current_legal_minimum_wage real not null,
+            pension_porcentage real not null
+        );""")
         cursor.connection.commit()
 
     def EliminarTabla(self):
         """ Borra la tabla de usuarios de la BD """
         cursor = ControladorPension().ObtenerCursor()
-        with open ("sql/eliminar-pension.sql", "r") as file:
-            cursor.execute(file.read())
+
+        cursor.execute("""drop table Pension""" )
         # Confirma los cambios realizados en la base de datos
         # Si no se llama, los cambios no quedan aplicados
         cursor.connection.commit()
@@ -30,7 +35,7 @@ class ControladorPension :
         """ Recibe un a instancia de la clase Usuario y la inserta en la tabla respectiva"""
         cursor = ControladorPension().ObtenerCursor()
         cursor.execute("""
-        INSERT INTO Pensiones (
+        INSERT INTO Pension (
             cedula,
             base_settlement_income,
             current_legal_minimum_wage,
@@ -52,12 +57,11 @@ class ControladorPension :
         cursor.execute("""
         SELECT cedula, base_settlement_income,
         current_legal_minimum_wage, pension_porcentage
-        FROM Pensiones WHERE cedula = %s;
+        FROM Pension WHERE cedula = %s;
         """, (cedula,))
 
         fila = cursor.fetchone()
-        resultado = Pension(fila[0],fila[1],fila[2],fila[3])
-        return resultado
+        return fila
 
     def ObtenerCursor(self):
         """ Crea la conexion a la base de datos y retorna un cursor para hacer consultas """
@@ -65,3 +69,6 @@ class ControladorPension :
         # Todas las instrucciones se ejecutan a tavés de un cursor
         cursor = connection.cursor()
         return cursor
+
+pensio = Pension(1213, 12003040,125000, 60)
+print(ControladorPension().BuscarUsuarioCedula(1213))

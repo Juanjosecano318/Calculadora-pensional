@@ -3,8 +3,8 @@
 
 class Pension:
 
-    def __init__(self, cedula: int, base_settlement_income: float,
-                current_legal_minimum_wage: float, pension_porcentage: float):
+    def __init__(self, cedula: str, base_settlement_income: int,
+                current_legal_minimum_wage: int, pension_porcentage: int):
         """Representa un registro de pensión asociado a un usuario"""
         self.cedula = cedula
         self.base_settlement_income = base_settlement_income

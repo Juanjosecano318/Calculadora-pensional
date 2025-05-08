@@ -5,7 +5,7 @@ class Usuario:
 
     Representa a un usuario de la pensión en la aplicación
     """
-    def __init__(self, cedula:int, nombre: str, base_settlement_income: float, current_legal_minimum_wage: float, pension_porcentage:float)  :
+    def __init__(self, cedula, nombre, base_settlement_income, current_legal_minimum_wage, pension_porcentage)  :
         self.cedula = cedula
         self.nombre = nombre
         self.base_settlement_income = base_settlement_income
@@ -13,7 +13,7 @@ class Usuario:
         self.pension_porcentage = pension_porcentage
 
 
-    def EsIgual( self, comparar_con ) :
+    def esIgual( self, comparar_con ) :
         """
         Compara el objeto actual, con otra instancia de la clase Usuario
         """

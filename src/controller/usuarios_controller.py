@@ -1,27 +1,29 @@
 import sys
 sys.path.append( "src" )
 import psycopg2
-from model.usuario import *
+from model.Usuario import *
 sys.path.append("")
 import SecretConfig
-
-
 class ControladorUsuarios:
 
     def CrearTabla(self):
         """ Crea la tabla de usuario en la BD """
         cursor = ControladorUsuarios().ObtenerCursor()
 
-        with open ("sql/crear-usuario.sql", "r") as file:
-            cursor.execute(file.read())
+        cursor.execute("""create table Usuarios (
+    cedula integer primary key,
+    nombre text not null,
+    base_settlement_income real not null,
+    current_legal_minimum_wage real not null,
+    pension_porcentage real not null
+); """)
         cursor.connection.commit()
 
     def EliminarTabla(self):
         """ Borra la tabla de usuarios de la BD """
         cursor = ControladorUsuarios().ObtenerCursor()
 
-        with open ("sql/crear-usuario.sql", "r") as file:
-            cursor.execute(file.read())
+        cursor.execute("""drop table usuarios""" )
         # Confirma los cambios realizados en la base de datos
         # Si no se llama, los cambios no quedan aplicados
         cursor.connection.commit()
@@ -52,8 +54,7 @@ class ControladorUsuarios:
         SELECT cedula, nombre, base_settlement_income, current_legal_minimum_wage, pension_porcentage
         FROM Usuarios WHERE cedula = '{cedula}' """)
         fila = cursor.fetchone()
-        resultado = Usuario(fila[0],fila[1],fila[2],fila[3],fila[4])
-        return resultado
+        return fila
 
     def ObtenerCursor(self):
         """ Crea la conexion a la base de datos y retorna un cursor para hacer consultas """
@@ -61,3 +62,5 @@ class ControladorUsuarios:
         # Todas las instrucciones se ejecutan a tavés de un cursor
         cursor = connection.cursor()
         return cursor
+
+ControladorUsuarios().EliminarTabla()
