@@ -82,3 +82,11 @@ Haz clic en "Calcular" para obtener el valor estimado de la pensión mensual.
 
 
 También puedes usar el botón "Limpiar" para reiniciar los campos o "Ayuda" para ver una explicación detallada del funcionamiento de la calculadora.
+
+
+
+
+Prerequisitos:
+
+
+antes de ejecutar la aplicacion por primera vez debes de elimiar las base de datos y debes de crear una nueva tabla en la base de datos (CORREGIRLO MAS, ESTA ES LA IDEA)
