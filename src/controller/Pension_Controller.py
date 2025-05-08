@@ -69,3 +69,6 @@ class ControladorPension :
         # Todas las instrucciones se ejecutan a tavés de un cursor
         cursor = connection.cursor()
         return cursor
+
+pensio = Pension(1213, 12003040,125000, 60)
+print(ControladorPension().BuscarUsuarioCedula(1213))
