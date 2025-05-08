@@ -1,4 +1,4 @@
-create table Pension (
+create table if not exists Pensiones (
         cedula integer primary key,
         base_settlement_income real not null,
         current_legal_minimum_wage real not null,
