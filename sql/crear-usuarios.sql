@@ -1,4 +1,4 @@
-create table Usuarios (
+create table if not exists Usuarios (
     cedula integer primary key,
     nombre text not null,
     base_settlement_income real not null,

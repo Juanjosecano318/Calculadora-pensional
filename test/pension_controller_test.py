@@ -13,8 +13,8 @@ class TestPension(unittest.TestCase):
     
     def test_insert_1(self):
         pension = Pension(15000257, 1500000, 2000000, 65)
-        ControladorPension.InsertarPension (pension)
-        buscar_cedula = ControladorPension.BuscarUsuarioCedula (pension.cedula)
+        ControladorPension.InsertarPension(pension)
+        buscar_cedula = ControladorPension.BuscarUsuarioCedula(pension.cedula)
         self.assertTrue (buscar_cedula.EsIgual(pension))
 
     def test_insert_2(self):
@@ -33,9 +33,6 @@ class TestPension(unittest.TestCase):
         buscar_cedula = ControladorPension.BuscarUsuarioCedula(pension.cedula)
         self.assertTrue (buscar_cedula.EsIgual(pension))
     
-
-
-
 
 if __name__ == "__main__":
     unittest.main()

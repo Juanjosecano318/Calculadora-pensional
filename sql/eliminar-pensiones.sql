@@ -1,1 +1,1 @@
-drop table if  exists Pensiones
+drop table if exists Pensiones

@@ -12,8 +12,12 @@ class ControladorPension :
     def CrearTabla():
         """ Crea la tabla de usuario en la BD """
         cursor = ControladorPension.ObtenerCursor()
-        with open("sql/crear-pensiones.sql", "r") as file:
-            cursor.execute(file.read())
+        
+        cursor.execute("""create table if not exists Pensiones (
+        cedula integer primary key,
+        base_settlement_income real not null,
+        current_legal_minimum_wage real not null,
+        pension_porcentage real not null);""")
         cursor.connection.commit()
 
     def EliminarTabla():
@@ -65,3 +69,5 @@ class ControladorPension :
         # Todas las instrucciones se ejecutan a tavés de un cursor
         cursor = connection.cursor()
         return cursor
+peo = Pension(174449,12313,1313,13133)
+ControladorPension.CrearTabla()
