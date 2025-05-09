@@ -57,3 +57,5 @@ class ControladorUsuarios:
         # Todas las instrucciones se ejecutan a tavés de un cursor
         cursor = connection.cursor()
         return cursor
+
+ControladorUsuarios.CrearTabla()
