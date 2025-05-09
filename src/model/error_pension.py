@@ -7,7 +7,6 @@ class ErrorBaseSettlementIncomeNegative(Exception):
     def __init__(self):
         super().__init__("El ingreso base de liquidación no puede ser negativo ni cero.")
 
-
 class ErrorBaseSettlementIncomeLetras(Exception):
     """
     Se lanza cuando el ingreso base de liquidación contiene letras o caracteres no válidos.

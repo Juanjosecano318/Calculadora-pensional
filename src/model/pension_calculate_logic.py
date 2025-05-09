@@ -2,7 +2,7 @@ import sys
 sys.path.append("src")  # Asegura que el módulo pueda importar desde el directorio 'src'
 
 # Importa las excepciones personalizadas relacionadas al cálculo de pensión
-from model.Error_Pension import (
+from model.error_pension import (
     ErrorBaseSettlementIncomeNegative,
     ErrorBaseSettlementIncomeLetras,
     ErrorPensionPorcentageNegative,
