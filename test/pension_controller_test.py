@@ -2,7 +2,7 @@
 import unittest
 import sys
 sys.path.append("src")
-from controller.pension_controller import *
+from controller.pension_controller import ControladorPension
 from model.pension import *
 
 class TestPension(unittest.TestCase):
@@ -15,7 +15,7 @@ class TestPension(unittest.TestCase):
         pension = Pension(15000257, 1500000, 2000000, 65)
         ControladorPension.InsertarPension(pension)
         buscar_cedula = ControladorPension.BuscarUsuarioCedula(pension.cedula)
-        self.assertTrue (buscar_cedula.EsIgual(pension))
+        self.assertTrue(buscar_cedula.EsIgual(pension))
 
     def test_insert_2(self):
         pension = Pension(

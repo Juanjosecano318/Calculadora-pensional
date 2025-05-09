@@ -49,7 +49,8 @@ class ControladorUsuarios:
         SELECT cedula, nombre, base_settlement_income, current_legal_minimum_wage, pension_porcentage
         FROM Usuarios WHERE cedula = '{cedula}' """)
         fila = cursor.fetchone()
-        return fila
+        resultado = Usuario(fila[0], fila[1], fila[2], fila[3], fila[4])
+        return resultado
 
     def ObtenerCursor():
         """ Crea la conexion a la base de datos y retorna un cursor para hacer consultas """
@@ -57,5 +58,3 @@ class ControladorUsuarios:
         # Todas las instrucciones se ejecutan a tavés de un cursor
         cursor = connection.cursor()
         return cursor
-
-ControladorUsuarios.CrearTabla()

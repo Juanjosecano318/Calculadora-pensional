@@ -60,7 +60,7 @@ class ControladorPension :
         """, (cedula,))
 
         fila = cursor.fetchone()
-        resultado = Pension(fila[0], fila[1], fila[2], fila[3])
+        resultado = Pension(fila[0],fila[1],fila[2],fila[3])
         return resultado
 
     def ObtenerCursor():
@@ -69,5 +69,3 @@ class ControladorPension :
         # Todas las instrucciones se ejecutan a tavés de un cursor
         cursor = connection.cursor()
         return cursor
-peo = Pension(174449,12313,1313,13133)
-ControladorPension.CrearTabla()
