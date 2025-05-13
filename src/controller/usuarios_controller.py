@@ -51,6 +51,28 @@ class ControladorUsuarios:
         fila = cursor.fetchone()
         resultado = Usuario(fila[0], fila[1], fila[2], fila[3], fila[4])
         return resultado
+    
+    def ActualizarCampo(cedula, campo, nuevo_valor):
+        """ Actualiza un campo específico para un registro identificado por la cédula """
+        cursor = ControladorUsuarios.ObtenerCursor()
+
+        # Validamos que el campo sea uno de los válidos para prevenir inyecciones SQL
+        campos_validos = [
+            "base_settlement_income",
+            "current_legal_minimum_wage",
+            "pension_porcentage"
+        ]
+        if campo not in campos_validos:
+            raise ValueError(f"Campo inválido: {campo}")
+
+        # Creamos la consulta con el campo insertado directamente (ya validado)
+        query = f"""
+        UPDATE Pensiones
+        SET {campo} = %s
+        WHERE cedula = %s;
+        """
+        cursor.execute(query, (nuevo_valor, cedula))
+        cursor.connection.commit()
 
     def ObtenerCursor():
         """ Crea la conexion a la base de datos y retorna un cursor para hacer consultas """

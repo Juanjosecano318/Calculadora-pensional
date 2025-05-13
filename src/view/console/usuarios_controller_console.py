@@ -1,7 +1,7 @@
 import sys
 sys.path.append("src")
-from controller.pension_controller import *
-from model.pension import *
+from controller.usuarios_controller import *
+from model.usuario import *
 
 while True:
     print("que deseas hacer, para seleccionar ponga el numero que corresponde")
@@ -15,11 +15,11 @@ while True:
         base_settlement_income = int(input("Ingrese la base de liquidacion:"))
         current_legal_minimum_wage = int(input("Ingrese su salario minimo legal vigente:"))
         pension_porcentage = int(input("Ingrese el porcentaje de pensión:"))
-        ControladorPension.InsertarPension(cedula, base_settlement_income, current_legal_minimum_wage, pension_porcentage)
+        ControladorUsuarios.InsertarUsuario(cedula, base_settlement_income, current_legal_minimum_wage, pension_porcentage)
     
     if opcion == "2":
         cedula = int(input("ingrese su cedula para buscar"))
-        resultado = ControladorPension.BuscarUsuarioCedula(cedula)
+        resultado = ControladorUsuarios.BuscarUsuarioCedula(cedula)
         print(resultado)
     
     elif opcion == "3":
@@ -35,11 +35,11 @@ while True:
             nuevo_valor = float(input("Nuevo valor: "))
             
             if nuevo_campo == "1":
-                ControladorPension.ActualizarCampo(cedula, "base_settlement_income", nuevo_valor)
+                ControladorUsuarios.ActualizarCampo(cedula, "base_settlement_income", nuevo_valor)
             elif nuevo_campo == "2":
-                ControladorPension.ActualizarCampo(cedula, "current_legal_minimum_wage", nuevo_valor)
+                ControladorUsuarios.ActualizarCampo(cedula, "current_legal_minimum_wage", nuevo_valor)
             elif nuevo_campo == "3":
-                ControladorPension.ActualizarCampo(cedula, "pension_porcentage", nuevo_valor)
+                ControladorUsuarios.ActualizarCampo(cedula, "pension_porcentage", nuevo_valor)
             else:
                 print("Opción no válida")
                 continue
