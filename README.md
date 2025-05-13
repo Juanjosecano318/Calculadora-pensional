@@ -96,7 +96,7 @@ Asegurese de tener una base de datos PostgreSQL y sus respectivos datos de acces
 
 En el archivo SecretConfig.py establezca los valores que se necesitan para poder hacer la conexión con la base de datos.
 
-Antes de ejecutar la aplicaicón por primera vez, debe correr las pruebas unitarias, para que se creen las tablas en la base de datos
+Antes de ejecutar la aplicación por primera vez, debe correr las pruebas unitarias, para que se creen las tablas en la base de datos
 
 Por seguridad, agrega `SecretConfig.py` a tu archivo `.gitignore` para evitar subirlo al repositorio:
 
