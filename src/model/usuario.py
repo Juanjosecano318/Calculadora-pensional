@@ -12,7 +12,7 @@ class Usuario:
         self.pension_porcentage = pension_porcentage
 
 
-    def esIgual( self, comparar_con ) :
+    def EsIgual( self, comparar_con ) :
         """
         Compara el objeto actual, con otra instancia de la clase Usuario
         """

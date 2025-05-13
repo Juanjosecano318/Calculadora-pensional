@@ -1,8 +1,8 @@
 import sys
 sys.path.append("src")
 
-from model.Pension_Calculate_Logic import *
-from model.Error_Pension import *
+from model.pension_calculate_logic import *
+from model.error_pension import *
 
 try:
     ingreso_base_de_liquidacion= input("Ingrese la base de liquidacion:")
