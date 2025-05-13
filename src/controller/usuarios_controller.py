@@ -58,6 +58,7 @@ class ControladorUsuarios:
 
         # Validamos que el campo sea uno de los válidos para prevenir inyecciones SQL
         campos_validos = [
+            "nombre",
             "base_settlement_income",
             "current_legal_minimum_wage",
             "pension_porcentage"
@@ -67,7 +68,7 @@ class ControladorUsuarios:
 
         # Creamos la consulta con el campo insertado directamente (ya validado)
         query = f"""
-        UPDATE Pensiones
+        UPDATE Usuarios
         SET {campo} = %s
         WHERE cedula = %s;
         """

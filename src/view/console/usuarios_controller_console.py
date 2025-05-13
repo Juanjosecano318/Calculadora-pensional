@@ -28,18 +28,28 @@ while True:
             
             print("\n¿Qué datos modificar?")
             print("1. Base de liquidación")
-            print("2. Salario mínimo")
-            print("3. Porcentaje de pensión")
+            print("2. Nombre")
+            print("3. Salario mínimo")
+            print("4. Porcentaje de pensión")
             
-            nuevo_campo = input("Opción (1-3): ")
-            nuevo_valor = float(input("Nuevo valor: "))
+            nuevo_campo = input("Opción (1-4): ")
             
             if nuevo_campo == "1":
+                nuevo_valor = float(input("Nuevo valor: "))
                 ControladorUsuarios.ActualizarCampo(cedula, "base_settlement_income", nuevo_valor)
+
             elif nuevo_campo == "2":
-                ControladorUsuarios.ActualizarCampo(cedula, "current_legal_minimum_wage", nuevo_valor)
+                nuevo_valor = input("Nuevo valor: ")
+                ControladorUsuarios.ActualizarCampo(cedula, "nombre", nuevo_valor)
+
             elif nuevo_campo == "3":
+                nuevo_valor = float(input("Nuevo valor: "))
+                ControladorUsuarios.ActualizarCampo(cedula, "current_legal_minimum_wage", nuevo_valor)
+
+            elif nuevo_campo == "4":
+                nuevo_valor = float(input("Nuevo valor: "))
                 ControladorUsuarios.ActualizarCampo(cedula, "pension_porcentage", nuevo_valor)
+
             else:
                 print("Opción no válida")
                 continue
