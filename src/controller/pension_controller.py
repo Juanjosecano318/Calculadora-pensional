@@ -63,6 +63,28 @@ class ControladorPension :
         resultado = Pension(fila[0],fila[1],fila[2],fila[3])
         return resultado
 
+    def ActualizarCampo(cedula, campo, nuevo_valor):
+        """ Actualiza un campo específico para un registro identificado por la cédula """
+        cursor = ControladorPension.ObtenerCursor()
+
+        # Validamos que el campo sea uno de los válidos para prevenir inyecciones SQL
+        campos_validos = [
+            "base_settlement_income",
+            "current_legal_minimum_wage",
+            "pension_porcentage"
+        ]
+        if campo not in campos_validos:
+            raise ValueError(f"Campo inválido: {campo}")
+
+        # Creamos la consulta con el campo insertado directamente (ya validado)
+        query = f"""
+        UPDATE Pensiones
+        SET {campo} = %s
+        WHERE cedula = %s;
+        """
+        cursor.execute(query, (nuevo_valor, cedula))
+        cursor.connection.commit()
+
     def ObtenerCursor():
         """ Crea la conexion a la base de datos y retorna un cursor para hacer consultas """
         connection = psycopg2.connect(database=SecretConfig.PGDATABASE, user=SecretConfig.PGUSER, password=SecretConfig.PGPASSWORD, host=SecretConfig.PGHOST)
