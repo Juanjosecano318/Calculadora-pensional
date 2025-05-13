@@ -103,5 +103,5 @@ Por seguridad, agrega `SecretConfig.py` a tu archivo `.gitignore` para evitar su
 Ejemplo:
 ```
 .gitignore
-src/SecretConfig.py
+SecretConfig.py
 ```
