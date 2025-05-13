@@ -11,14 +11,14 @@ class TestUsuarios(unittest.TestCase):
         ControladorUsuarios.CrearTabla()
     
     def test_insert_1(self):
-        usuario = Usuario(15000257, "Juan Perez", 1500000, 2000000, 65)
+        usuario = Usuario(150002, "Juan Perez", 1500000, 2000000, 65)
         ControladorUsuarios.InsertarUsuario(usuario)
         buscar_cedula = ControladorUsuarios.BuscarUsuarioCedula(usuario.cedula)
         self.assertTrue(buscar_cedula.EsIgual(usuario))
 
     def test_insert_2(self):
         usuario = Usuario(
-            78956321, "Maria Gomez", 3000000, 1423500, 85
+            789563, "Maria Gomez", 3000000, 1423500, 85
         )
         ControladorUsuarios.InsertarUsuario(usuario)
         buscar_cedula = ControladorUsuarios.BuscarUsuarioCedula(usuario.cedula)
@@ -26,7 +26,7 @@ class TestUsuarios(unittest.TestCase):
 
     def test_insert_3(self):
         usuario = Usuario(
-            78965152, "Carlos Ruiz", 5000000, 11500000, 75.5
+            789651, "Carlos Ruiz", 5000000, 11500000, 75.5
         )
         ControladorUsuarios.InsertarUsuario(usuario)
         buscar_cedula = ControladorUsuarios.BuscarUsuarioCedula(usuario.cedula)
