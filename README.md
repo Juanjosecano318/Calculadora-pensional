@@ -82,3 +82,18 @@ Haz clic en "Calcular" para obtener el valor estimado de la pensión mensual.
 
 
 También puedes usar el botón "Limpiar" para reiniciar los campos o "Ayuda" para ver una explicación detallada del funcionamiento de la calculadora.
+
+
+
+## Prerrequisitos para la conexión con la base de datos:
+
+Instale el paquete psycopg2 con:
+```
+pip install psycopg2
+```
+
+Asegurese de tener una base de datos PostgreSQL y sus respectivos datos de acceso
+
+En el archivo SecretConfig.py establezca los valores que se necesitan para poder hacer la conexión con la base de datos.
+
+Antes de ejecutar la aplicaicón por primera vez, debe correr las pruebas unitarias, para que se creen las tablas en la base de datos
