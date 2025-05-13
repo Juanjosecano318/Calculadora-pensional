@@ -98,10 +98,10 @@ En el archivo SecretConfig.py establezca los valores que se necesitan para poder
 
 Antes de ejecutar la aplicación por primera vez, debe correr las pruebas unitarias, para que se creen las tablas en la base de datos
 
-Por seguridad, agrega `src/SecretConfig.py` a tu archivo `.gitignore` para evitar subirlo al repositorio:
+Por seguridad, agrega `SecretConfig.py` a tu archivo `.gitignore` para evitar subirlo al repositorio:
 
 Ejemplo:
 ```
 .gitignore
-src/SecretConfig.py
+SecretConfig.py
 ```
