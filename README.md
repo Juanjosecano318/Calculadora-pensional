@@ -109,8 +109,12 @@ SecretConfig.py
 - Recuerde poner en un archivo de python los datos de conexion y guardar como SecretConfig.py
 
 PGHOST='PONGA EL HOST DE LA BD AQUI'
+
 PGDATABASE='PONGA EL NOMBRE DE LA BD AQUI'
+
 PGUSER='PONGA EL USUARIO AQUI'
+
 PGPASSWORD='PONGA LA CONTRASEÑA AQUI'
+
 PGPORT=5432
 
