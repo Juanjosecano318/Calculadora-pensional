@@ -6,6 +6,10 @@
 - Heiver David Ruales Luna
 - Mariana Lopera Correa
 
+#Nombres entrega 5 
+-juan jose cano giraldo
+-juan pablo tafur 
+
 # Calculadora-pensional
 En este repositorio se podrá encontrar toda la información acerca de la calculadora pensional, este proyecto tiene como objetivo proporcionar una herramienta intuitiva y eficiente para calcular la pensión y simulaciones personalizas para cada usuario. 
 
