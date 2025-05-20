@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Calculadora Pensional</title>
+</head>
+
+<body>
+    <h2>Calculadora Pensional</h2>
+    <form action="/calcular-pension" method="POST">
+        <div>
+            <label for="ibl">Ingreso Base de Liquidación (IBL):</label>
+            <input type="number" id="ibl" name="ibl" step="0.01" min="0" required />
+        </div>
+        <div>
+            <label for="porcentaje_pension">Porcentaje de pensión (%):</label>
+            <input type="number" id="porcentaje_pension" name="porcentaje_pension" step="0.01" min="0" max="100" required />
+        </div>
+        <div>
+            <label for="salario_minimo">Salario Mínimo Legal Vigente (SMMLV):</label>
+            <input type="number" id="salario_minimo" name="salario_minimo" value="1300000" step="1000" min="0" required />
+        </div>
+
+        <input type="submit" value="Calcular" />
+    </form>
+</body>
+
+</html>
