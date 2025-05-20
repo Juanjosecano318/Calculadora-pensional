@@ -1,5 +1,10 @@
 from flask import Flask, render_template, request
 
+import sys
+sys.path.append("src")
+
+from controller.usuarios_controller import ControladorUsuarios
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -12,8 +17,9 @@ def buscar():
 
 @app.route('/resultado_busqueda')
 def resultado_busqueda():
-    
-    return render_template('resultado_busqueda.html', cedula=request.args["cedula"])
+    cedula = request.args.get("cedula")  # en minúscula y más seguro
+    ControladorUsuarios.BuscarUsuarioCedula(cedula)
+    return render_template('resultado_busqueda.html', cedula=cedula)
 
 # Puedes agregar aquí todas las demás rutas que ya tienes
 
