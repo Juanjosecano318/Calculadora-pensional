@@ -12,6 +12,7 @@ def buscar():
 
 @app.route('/resultado_busqueda')
 def resultado_busqueda():
+    
     return render_template('resultado_busqueda.html', cedula=request.args["cedula"])
 
 # Puedes agregar aquí todas las demás rutas que ya tienes
