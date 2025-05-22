@@ -4,14 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Resultados de Usuario - Calculadora Pensional</title>
+    <h2>Información del Usuario</h2>   #revisar porque no muestra cedula 
+    <p><strong>Cédula buscada:</strong> {{ cedula }}</p>
 </head>
 
 <body>
     <h1>Información del Usuario</h1>
-
-    <p>
-         Búsqueda de Tarjetas para la cédula : {{ cedula }}
-    </p>
 
     <table border="1" cellpadding="5" cellspacing="0">
         <thead style="font-weight: bold; background-color: #f0f0f0;">
@@ -23,16 +21,21 @@
                 <td>Pensión Mensual Estimada</td>
             </tr>
         </thead>
-
-        <tbody>
-            <tr>
-                <td>Laura Gómez</td>
-                <td>$4,000,000</td>
-                <td>$1,300,000</td>
-                <td>75%</td>
-                <td>$3,000,000</td>
-            </tr>
-        </tbody>
+    <tbody>
+        {% if usuario %}
+        <tr>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.base_settlement_income }}</td>
+            <td>{{ usuario.current_legal_minimum_wage }}</td>
+            <td>{{ usuario.pension_porcentage }}</td>
+            <td>{{ usuario.base_settlement_income * usuario.pension_porcentage / 100 }}</td>
+        </tr>
+        {% else %}
+        <tr>
+        <td colspan="5">Usuario no encontrado</td>
+    </tr>
+    {% endif %}
+    </tbody>
     </table>
 </body>
 
