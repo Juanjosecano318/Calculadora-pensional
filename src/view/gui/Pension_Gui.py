@@ -11,8 +11,8 @@ import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
 # Importa la lógica de cálculo de pensión y las clases de errores personalizados
-from model.Pension_Calculate_Logic import calculate_pension
-from model.Error_Pension import (
+from model.pension_calculate_logic import calculate_pension
+from model.error_pension import (
     ErrorBaseSettlementIncomeNegative, ErrorBaseSettlementIncomeLetras,
     ErrorPensionPorcentageNegative, ErrorPensionPorcentageLetras,
     ErrorHighPensionPorcentage, ErrorCurrentLegalMinimumWageLetras,
