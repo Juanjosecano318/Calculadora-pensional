@@ -1,0 +1,3 @@
+kivy
+psycopg2
+flask
