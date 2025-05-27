@@ -122,3 +122,47 @@ PGPASSWORD='PONGA LA CONTRASEÑA AQUI'
 
 PGPORT=5432
 
+---
+
+## Instrucciones para ejecutar la aplicación localmente y con una base de datos en blanco
+
+1. **Clona el repositorio** en tu máquina local:
+   ```
+   git clone <URL_DEL_REPOSITORIO>
+   ```
+
+2. **Instala las dependencias necesarias** (por ejemplo, Flask, psycopg2, Kivy si usas la interfaz gráfica):
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. **Configura la base de datos:**
+   - Asegúrate de tener una instancia de PostgreSQL corriendo.
+   - Crea una base de datos vacía para la aplicación.
+   - Configura tus credenciales de conexión en el archivo `SecretConfig.py` según las instrucciones del README.
+
+4. **Crea las tablas necesarias en la base de datos:**
+   - Ejecuta la aplicación y accede a la ruta `/crear_tabla` o utiliza la funcionalidad correspondiente para crear las tablas desde la interfaz web.
+   - Alternativamente, puedes ejecutar las pruebas unitarias para que las tablas se creen automáticamente.
+
+5. **Ejecuta la aplicación:**
+   - Para la interfaz de consola:
+     ```
+     py src\view\console\Pension_Console.py
+     ```
+   - Para la interfaz gráfica (GUI):
+     ```
+     py src/view/gui/pension_gui.py
+     ```
+   - Para la interfaz web (Flask):
+     ```
+     py src/view/view_web/app.py
+     ```
+
+6. **Accede a la aplicación** desde tu navegador en la dirección que indique Flask (por defecto, http://127.0.0.1:5000/).
+
+7. **La aplicación estará lista para usarse con una base de datos en blanco.** Puedes comenzar a registrar usuarios y realizar cálculos de pensión desde cero.
+
+---
+
+
